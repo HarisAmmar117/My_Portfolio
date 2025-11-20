@@ -95,7 +95,7 @@ Message: ${formData.message}
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-purple-900/20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#FF8C40] bg-clip-text text-transparent mb-4">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#FF8C40] bg-clip-text mb-4">Get In Touch</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Let's work together! I'm always open to discussing new opportunities and creative projects.
           </p>

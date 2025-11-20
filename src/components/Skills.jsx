@@ -63,7 +63,7 @@ const Skills = () => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#FF8C40] bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#FF8C40] bg-clip-text mb-4">
             Skills & Technologies
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
