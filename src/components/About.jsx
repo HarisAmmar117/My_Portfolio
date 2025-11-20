@@ -37,7 +37,7 @@ const About = () => {
     </div>
 
     {/* Grid Layout */}
-    <div className="w-3/4 grid grid-cols-1 md:grid-cols-2 items-center gap-5 mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5 mx-auto">
 
       {/* Profile Image */}
       <div className="flex justify-center">

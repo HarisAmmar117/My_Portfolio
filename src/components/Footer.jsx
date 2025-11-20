@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-4 md:mb-0">
             <span>Made with</span>
             <Heart size={18} className="text-red-500 animate-pulse" />
-            <span>by Haris Ammar</span>
+            <span>by Ammar Haris</span>
           </div>
           
           <div className="text-gray-500 dark:text-gray-500 text-sm">
