@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* REMOVE ALL VITE DEFAULT STYLES */
+
+html {
+  scroll-behavior: smooth;
+}
