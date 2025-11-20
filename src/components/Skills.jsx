@@ -56,24 +56,22 @@ const Skills = () => {
   ];
 
   return (
-    <section
-      id="skills"
-      className="py-20 bg-white/50 dark:bg-gray-900 backdrop-blur-sm"
-    >
+    <section id="skills" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
+
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#FF8C40] bg-clip-text mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#FF8C40] mb-4">
             Skills & Technologies
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             My technical expertise and professional capabilities
           </p>
         </div>
 
-        {/* Technical Skills - Images */}
+        {/* Technical Skills */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-10 text-gray-800 dark:text-white text-center">
+          <h3 className="text-2xl font-bold mb-10 text-white text-center">
             Technical Skills
           </h3>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-10 justify-center items-center">
@@ -84,7 +82,7 @@ const Skills = () => {
                   alt={name}
                   className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain drop-shadow"
                 />
-                <span className="text-base font-medium text-gray-700 dark:text-gray-300 mt-4 text-center">
+                <span className="text-base font-medium text-gray-300 mt-4 text-center">
                   {name}
                 </span>
               </div>
@@ -92,37 +90,40 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Core / Soft Skills with Progress Bars */}
+        {/* Core Skills */}
         <div>
-          <h3 className="text-2xl font-bold mb-8 text-gray-800 dark:text-white text-center">
+          <h3 className="text-2xl font-bold mb-8 text-white text-center">
             Core Skills
           </h3>
           <div className="max-w-2xl mx-auto space-y-6">
             {coreSkills.map(({ name, level }) => (
               <div
                 key={name}
-                className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-4 bg-gray-800 rounded-lg shadow-md"
               >
                 <div className="flex-1">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-medium text-gray-800 dark:text-gray-200 text-sm sm:text-base">
+                    <span className="font-medium text-gray-200 text-sm sm:text-base">
                       {name}
                     </span>
-                    <span className="text-xs sm:text-sm font-bold text-[#FF8C41] bg-orange-50 dark:bg-orange-900/30 px-2 py-1 rounded">
+                    <span className="text-xs sm:text-sm font-bold text-[#FF8C41] bg-orange-900/30 px-2 py-1 rounded">
                       {level}%
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+
+                  <div className="w-full bg-gray-700 rounded-full h-2.5">
                     <div
                       className="bg-gradient-to-r from-[#FF8C41] to-orange-500 h-2.5 rounded-full transition-all duration-1000 ease-out"
                       style={{ width: `${level}%` }}
                     ></div>
                   </div>
+
                 </div>
               </div>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );

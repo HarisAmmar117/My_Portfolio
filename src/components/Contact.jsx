@@ -15,29 +15,15 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // 🔍 Validation Rules
   const validateForm = () => {
-    if (!formData.name.trim()) {
-      toast.error("Name is required");
-      return false;
-    }
+    if (!formData.name.trim()) { toast.error("Name is required"); return false; }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast.error("Enter a valid email address");
-      return false;
-    }
-    if (!formData.subject.trim()) {
-      toast.error("Subject is required");
-      return false;
-    }
-    if (formData.message.trim().length < 10) {
-      toast.error("Message must be at least 10 characters");
-      return false;
-    }
+    if (!emailRegex.test(formData.email)) { toast.error("Enter a valid email address"); return false; }
+    if (!formData.subject.trim()) { toast.error("Subject is required"); return false; }
+    if (formData.message.trim().length < 10) { toast.error("Message must be at least 10 characters"); return false; }
     return true;
   };
 
-  // 📨 Submit handler with EmailJS (hardcoded keys)
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
@@ -46,8 +32,8 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        "service_zol3j6b",           // Your service ID
-        "template_v117jp5",          // Your template ID
+        "service_zol3j6b",
+        "template_v117jp5",
         {
           name: formData.name,
           email: formData.email,
@@ -61,7 +47,7 @@ Subject: ${formData.subject}
 Message: ${formData.message}
           `
         },
-        "6cBk8Y1qS09Pcmyh_"          // Your public key
+        "6cBk8Y1qS09Pcmyh_"
       );
 
       setIsSubmitted(true);
@@ -92,11 +78,11 @@ Message: ${formData.message}
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-purple-900/20">
+    <section id="contact" className="py-20 bg-gray-900 text-gray-100">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#FF8C40] bg-clip-text mb-4">Get In Touch</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#FF8C40] mb-4">Get In Touch</h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Let's work together! I'm always open to discussing new opportunities and creative projects.
           </p>
         </div>
@@ -105,32 +91,32 @@ Message: ${formData.message}
           {/* CONTACT INFO */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Let's start a conversation</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Let's start a conversation</h3>
+              <p className="text-gray-400 text-lg leading-relaxed mb-8">
                 I'm currently available for freelance work and full-time opportunities. Whether you have a project in mind or just want to say hello, I'd love to hear from you!
               </p>
             </div>
 
             <div className="space-y-6">
               {contactInfo.map((item) => (
-                <a key={item.label} href={item.href} className="group flex items-center gap-6 p-4 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <a key={item.label} href={item.href} className={`group flex items-center gap-6 p-4 bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1`}>
                   <div className={`w-14 h-14 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     <item.icon className="text-white" size={24} />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{item.label}</p>
-                    <p className="text-lg font-semibold text-gray-800 dark:text-white">{item.value}</p>
+                    <p className="text-sm text-gray-400">{item.label}</p>
+                    <p className="text-lg font-semibold text-white">{item.value}</p>
                   </div>
                 </a>
               ))}
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Follow me on</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">Follow me on</h4>
               <div className="flex gap-4">
                 {socialLinks.map((social) => (
                   <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer"
-                     className={`p-3 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 text-gray-600 dark:text-gray-400 ${social.color}`}>
+                     className={`p-3 bg-gray-800/70 backdrop-blur-sm rounded-xl border border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 text-gray-400 ${social.color}`}>
                     <social.icon size={24} />
                   </a>
                 ))}
@@ -139,14 +125,14 @@ Message: ${formData.message}
           </div>
 
           {/* CONTACT FORM */}
-          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl border border-white/20 shadow-2xl p-8">
+          <div className="bg-gray-800/80 backdrop-blur-sm rounded-3xl border border-gray-700 shadow-2xl p-8">
             {isSubmitted ? (
               <div className="text-center py-12">
                 <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle className="text-white" size={40} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Message Sent!</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-8">
+                <h3 className="text-2xl font-bold text-white mb-4">Message Sent!</h3>
+                <p className="text-gray-400 mb-8">
                   Thank you for reaching out. I'll get back to you within 24 hours.
                 </p>
                 <button onClick={() => setIsSubmitted(false)}
@@ -158,43 +144,43 @@ Message: ${formData.message}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Name *</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Your Name *</label>
                     <input type="text" name="name" value={formData.name} onChange={handleChange} required
-                           className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+                           className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
                            placeholder="John Doe"/>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email Address *</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Email Address *</label>
                     <input type="email" name="email" value={formData.email} onChange={handleChange} required
-                           className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+                           className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
                            placeholder="john@example.com"/>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone</label>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Phone</label>
                   <input type="text" name="phone" value={formData.phone} onChange={handleChange}
-                         className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+                         className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
                          placeholder="+94 78 123 4567"/>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject *</label>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Subject *</label>
                   <input type="text" name="subject" value={formData.subject} onChange={handleChange} required
-                         className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+                         className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
                          placeholder="Project Collaboration"/>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Message *</label>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Your Message *</label>
                   <textarea name="message" value={formData.message} onChange={handleChange} required rows="6"
-                            className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none resize-none"
+                            className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none resize-none"
                             placeholder="Tell me about your project or just say hello..."/>
                 </div>
 
                 <button type="submit" disabled={isSubmitting}
-                        className="w-full group [background-image:linear-gradient(135deg,#FF4E00,#FF8C42)] text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-3">
+                        className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3">
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"/>

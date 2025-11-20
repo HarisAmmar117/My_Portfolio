@@ -3,7 +3,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Education from './components/Resume'; // ✅ Import Resume/Education
+import Education from './components/Resume'; // Resume/Education
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
@@ -14,7 +14,7 @@ import './App.css';
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-gray-900 transition-all duration-500">
+      <div className="min-h-screen bg-gray-900 text-gray-100 transition-all duration-500">
 
         {/* Smooth Scrolling Container */}
         <div className="relative z-10">
@@ -29,7 +29,7 @@ function App() {
               <About />
             </section>
 
-            {/* ✅ Resume / Education Section */}
+            {/* Resume / Education Section */}
             <section id="resume" className="scroll-mt-20">
               <Education />
             </section>
@@ -50,38 +50,40 @@ function App() {
           <Footer />
         </div>
 
-        {/* Toast Notifications */}
+        {/* Dark Toast Notifications */}
         <Toaster
           position="top-right"
           toastOptions={{
             duration: 4000,
             style: {
-              background: 'rgba(255, 255, 255, 0.9)',
+              background: 'rgba(31, 41, 55, 0.9)', // dark gray
               backdropFilter: 'blur(10px)',
-              color: '#1f2937',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
+              color: '#f9fafb', // light text
+              border: '1px solid rgba(255, 255, 255, 0.1)',
               borderRadius: '12px',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
             },
             success: {
               iconTheme: {
                 primary: '#10b981',
-                secondary: 'white',
+                secondary: '#1f2937', // dark background for icons
               },
             },
             error: {
               iconTheme: {
                 primary: '#ef4444',
-                secondary: 'white',
+                secondary: '#1f2937',
               },
             },
           }}
         />
 
         {/* Scroll Progress Bar */}
-        <div className="fixed top-0 left-0 right-0 h-1 transform-origin-left z-50" 
-             style={{ transform: 'scaleX(0)' }}
-             id="progress-bar" />
+        <div
+          className="fixed top-0 left-0 right-0 h-1 transform-origin-left z-50 bg-indigo-500"
+          style={{ transform: 'scaleX(0)' }}
+          id="progress-bar"
+        />
       </div>
     </ThemeProvider>
   );
