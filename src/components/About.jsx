@@ -27,7 +27,7 @@ const About = () => {
     
     {/* Section Title */}
     <div className="text-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-bold text-[#FF8C42] bg-clip-text text-transparent mb-4">
+      <h2 className="text-4xl md:text-5xl font-bold text-[#FF8C40] bg-clip-text text-transparent mb-4">
         About Me
       </h2>
 
