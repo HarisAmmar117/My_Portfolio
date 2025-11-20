@@ -7,3 +7,13 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Force input text to be white */
+input, textarea {
+  color: white !important;
+}
+
+/* Stop Chrome autofill background from turning white/yellow */
+
+/* On focus too */
+
