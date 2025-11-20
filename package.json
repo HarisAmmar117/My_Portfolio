@@ -3,11 +3,14 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://HarisAmmar117.github.io/My_Portfolio",
   "scripts": {
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
