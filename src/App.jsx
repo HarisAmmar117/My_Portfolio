@@ -3,6 +3,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Education from './components/Resume'; // ✅ Import Resume/Education
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
@@ -14,7 +15,6 @@ function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-gray-900 transition-all duration-500">
-        
 
         {/* Smooth Scrolling Container */}
         <div className="relative z-10">
@@ -27,6 +27,11 @@ function App() {
             
             <section id="about" className="scroll-mt-20">
               <About />
+            </section>
+
+            {/* ✅ Resume / Education Section */}
+            <section id="resume" className="scroll-mt-20">
+              <Education />
             </section>
             
             <section id="projects" className="scroll-mt-20">
