@@ -3,11 +3,12 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Education from './components/Resume'; // Resume/Education
+import Education from './components/Resume'; 
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Blogs from './components/Blogs';
 import { Toaster } from 'react-hot-toast';
 import './App.css';
 
@@ -16,7 +17,6 @@ function App() {
     <ThemeProvider>
       <div className="min-h-screen bg-gray-900 text-gray-100 transition-all duration-500">
 
-        {/* Smooth Scrolling Container */}
         <div className="relative z-10">
           <Navbar />
           
@@ -29,7 +29,7 @@ function App() {
               <About />
             </section>
 
-            {/* Resume / Education Section */}
+     
             <section id="resume" className="scroll-mt-20">
               <Education />
             </section>
@@ -41,6 +41,11 @@ function App() {
             <section id="skills" className="scroll-mt-20">
               <Skills />
             </section>
+
+            <section id="blogs" className="scroll-mt-20">
+              <Blogs />
+            </section>
+
             
             <section id="contact" className="scroll-mt-20">
               <Contact />
@@ -50,7 +55,7 @@ function App() {
           <Footer />
         </div>
 
-        {/* Dark Toast Notifications */}
+
         <Toaster
           position="top-right"
           toastOptions={{
@@ -78,7 +83,7 @@ function App() {
           }}
         />
 
-        {/* Scroll Progress Bar */}
+ 
         <div
           className="fixed top-0 left-0 right-0 h-1 transform-origin-left z-50 bg-indigo-500"
           style={{ transform: 'scaleX(0)' }}
