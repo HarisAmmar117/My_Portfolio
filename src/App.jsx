@@ -9,6 +9,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Blogs from './components/Blogs';
+import Certificates from './components/Certificate';
 import { Toaster } from 'react-hot-toast';
 import './App.css';
 
@@ -32,6 +33,10 @@ function App() {
      
             <section id="resume" className="scroll-mt-20">
               <Education />
+            </section>
+
+            <section id="certificates" className="scroll-mt-20">
+              <Certificates />
             </section>
             
             <section id="projects" className="scroll-mt-20">

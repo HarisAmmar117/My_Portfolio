@@ -3,6 +3,15 @@ import { ExternalLink, Github } from "lucide-react";
 
 const Projects = () => {
   const projects = [
+
+    {
+      title: "eCommerce Microservices WebApp",
+      tech: ["Spring Boot", "Spring Cloud", "Docker"],
+      description:
+        "A cloud-native e-commerce microservices app with secure authentication and event-driven architecture.",
+      github: "https://github.com/HarisAmmar117/eCommerce-microservices-webApp",
+      image: "/api/placeholder/400/250",
+    },
     {
       title: "Identity Issuing System",
       tech: ["PHP", "HTML", "CSS"],

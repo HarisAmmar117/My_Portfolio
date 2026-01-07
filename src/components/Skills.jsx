@@ -1,14 +1,14 @@
 import React from "react";
 import cPlus from "../images/skills/cplus.png";
-import reactImg from "../images/skills/react.png";
+import clang from "../images/skills/clang.webp";
 import javaImg from "../images/skills/javaLogo.png";
 import phythonImg from "../images/skills/python.png";
 import phpImg from "../images/skills/php.jpg";
+import reactImg from "../images/skills/react.png";
 import jsImg from "../images/skills/javascript.png";
 import tsImg from "../images/skills/typescript.png";
 import htmlImg from "../images/skills/htmllogo.webp";
 import tailwindImg from "../images/skills/tw.png";
-import clang from "../images/skills/clang.webp";
 import nodeImg from "../images/skills/nodejs.png";
 import mongoImg from "../images/skills/mongodb.svg";
 import bootstrapImg from "../images/skills/bootstrap.svg";
@@ -18,29 +18,67 @@ import cssImg from "../images/skills/css.png";
 import sqlImg from "../images/skills/sql.png";
 import springImg from "../images/skills/springlogo.png";
 import wordpressImg from "../images/skills/wordpress.png";
+import dockerImg from "../images/skills/docker.png";
+import kubImag from "../images/skills/kub.png";
+import postgresImg from "../images/skills/postgre.png";
+import kafkaImg from "../images/skills/kafka.png";
+import rabbitmqImg from "../images/skills/RabbitMQ.png";
+import keycloakImg from "../images/skills/keycloak.svg";
+import grafanaImg from "../images/skills/Grafana.png";
+import zipkinImg from "../images/skills/zipkin.png";
+import mysqlImg from "../images/skills/MySQL.png";
 
 const Skills = () => {
-  const technicalSkills = [
-    { name: "Java", image: javaImg },
-    { name: "Python", image: phythonImg },
-    { name: "php", image: phpImg },
-    { name: "React", image: reactImg },
-    { name: "JavaScript", image: jsImg },
-    { name: "TypeScript", image: tsImg },
-    { name: "HTML", image: htmlImg },
-    { name: "CSS", image: cssImg },
-    { name: "Tailwind CSS", image: tailwindImg },
-    { name: "C", image: clang },
-    { name: "C++", image: cPlus },
-    { name: "Node.js", image: nodeImg },
-    { name: "MongoDB", image: mongoImg },
-    { name: "Bootstrap", image: bootstrapImg },
-    { name: "Kotlin", image: kotlinImg },
-    { name: "xml", image: xmlImg },
-    { name: "SQL", image: sqlImg },
-    { name: "Spring Boot", image: springImg },
-    { name: "WordPress", image: wordpressImg },
-  ];
+  const technicalSkills = {
+    "Programming Languages": {
+      description: "Strong fundamentals and OOP knowledge",
+      skills: [
+        { name: "Java", image: javaImg },
+        { name: "Python", image: phythonImg },
+        { name: "PHP", image: phpImg },
+        { name: "C", image: clang },
+        { name: "C++", image: cPlus },
+        { name: "Kotlin", image: kotlinImg },
+        { name: "SQL", image: sqlImg },
+        { name: "XML", image: xmlImg },
+      ],
+    },
+    "Frontend & Backend Frameworks": {
+      description: "Modern web development and backend frameworks",
+      skills: [
+        { name: "HTML", image: htmlImg },
+        { name: "CSS", image: cssImg },
+        { name: "JavaScript", image: jsImg },
+        { name: "TypeScript", image: tsImg },
+        { name: "React", image: reactImg },
+        { name: "Tailwind CSS", image: tailwindImg },
+        { name: "Bootstrap", image: bootstrapImg },
+        { name: "Node.js", image: nodeImg },
+        { name: "Spring Boot", image: springImg },
+        { name: "WordPress", image: wordpressImg },
+      ],
+    },
+    "Databases & Messaging": {
+      description: "Efficient data management and event-driven communication",
+      skills: [
+        { name: "MongoDB", image: mongoImg },
+        { name: "PostgreSQL", image: postgresImg },
+        { name: "Kafka", image: kafkaImg },
+        { name: "RabbitMQ", image: rabbitmqImg },
+        { name: "MySQL", image: mysqlImg },
+      ],
+    },
+    "DevOps, Security & Monitoring": {
+      description: "Deployment, containerization, authentication & monitoring",
+      skills: [
+        { name: "Docker", image: dockerImg },
+        { name: "Kubernetes", image: kubImag },
+        { name: "Keycloak", image: keycloakImg },
+        { name: "Grafana", image: grafanaImg },
+        { name: "Zipkin", image: zipkinImg },
+      ],
+    },
+  };
 
   const coreSkills = [
     { name: "Problem Solving", level: 89 },
@@ -58,7 +96,6 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
-
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#FF8C40] mb-4">
@@ -74,20 +111,29 @@ const Skills = () => {
           <h3 className="text-2xl font-bold mb-10 text-white text-center">
             Technical Skills
           </h3>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-10 justify-center items-center">
-            {technicalSkills.map(({ name, image }) => (
-              <div key={name} className="flex flex-col items-center">
-                <img
-                  src={image}
-                  alt={name}
-                  className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain drop-shadow"
-                />
-                <span className="text-base font-medium text-gray-300 mt-4 text-center">
-                  {name}
-                </span>
+          {Object.entries(technicalSkills).map(([category, { description, skills }]) => (
+            <div key={category} className="mb-12 text-center">
+              <h4 className="text-2xl font-bold mb-2 text-[#FF8C41]">{category}</h4>
+              <p className="text-gray-400 text-sm mb-6">{description}</p>
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-10 justify-center items-center">
+                {skills.map(({ name, image }) => (
+                  <div
+                    key={name}
+                    className="flex flex-col items-center transition transform hover:-translate-y-2 hover:scale-105 duration-300"
+                  >
+                    <img
+                      src={image}
+                      alt={name}
+                      className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain drop-shadow-lg"
+                    />
+                    <span className="text-base font-medium text-gray-300 mt-4 text-center">
+                      {name}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
         {/* Core Skills */}
@@ -123,7 +169,6 @@ const Skills = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

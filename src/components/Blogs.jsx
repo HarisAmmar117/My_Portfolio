@@ -1,5 +1,6 @@
 import React from "react";
 import apiBlogImage from "../images/blogs/apiBlog.jpg";
+import dockerBlogImage from "../images/blogs/contImage.jpg"
 
 const Blogs = () => {
   const blogs = [
@@ -7,10 +8,17 @@ const Blogs = () => {
       title: "What Is an API? A Beginner-Friendly Explanation",
       description:
         "APIs (Application Programming Interfaces) let software communicate, share functions, and speed up development. This beginner-friendly guide explains endpoints, request types, and practical examples to show how APIs work.",
-      image: apiBlogImage, 
-      link: "https://ammar117blogs.hashnode.dev/what-is-an-api-a-beginner-friendly-explanation", 
+      image: apiBlogImage,
+      link: "https://ammar117blogs.hashnode.dev/what-is-an-api-a-beginner-friendly-explanation",
     },
-    
+
+    {
+      title: "Containerization Explained: A Practical Guide Using Docker",
+      description:
+        "Containerization helps solve shared environment issues in team development by packaging applications with their dependencies. This article explains the core concepts of Docker, images, containers, and how they ensure consistent application behavior across systems.",
+      image: dockerBlogImage,
+      link: "https://ammar117blogs.hashnode.dev/containerization-explained-a-practical-guide-using-docker",
+    },
   ];
 
   return (
