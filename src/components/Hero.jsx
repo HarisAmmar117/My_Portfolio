@@ -9,7 +9,7 @@ const Hero = () => {
 
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = `${import.meta.env.BASE_URL}myCV.pdf`;
+    link.href = `${import.meta.env.BASE_URL}AmmarCV.pdf`;
     link.download = "Ammar-Haris-CV.pdf";
     document.body.appendChild(link);
     link.click();
