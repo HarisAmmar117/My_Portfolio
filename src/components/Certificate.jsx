@@ -10,6 +10,14 @@ const Certificates = () => {
         "Completed a hands-on masterclass building a real-world eCommerce application using Java Spring Boot microservices. Gained practical experience with Spring REST clients, Docker, Kubernetes, Kafka, RabbitMQ, PostgreSQL, MongoDB, and secure API design (OAuth2, JWT, Keycloak).",
       url: "https://ude.my/UC-56349bee-a1ef-447a-a5be-87f8ef971dae",
     },
+        {
+      title: "Supervised Machine Learning: Regression and Classification",
+      issuer: "Coursera (Stanford University & DeepLearning.AI)",
+      year: "2026",
+      description:
+        "Learned the fundamentals of supervised machine learning, including building and training regression and classification models using Python, NumPy, and scikit-learn. Covered linear regression, logistic regression, feature engineering, and model evaluation.",
+      url: "https://coursera.org/share/ec8ca040ae621fdde41470fab5ac4464",
+    },
     {
       title: "Java (Basics)",
       issuer: "HackerRank",
@@ -26,6 +34,8 @@ const Certificates = () => {
         "Gained hands-on experience with Python fundamentals including data types, loops, conditionals, functions, and basic problem-solving.",
       url: "https://www.hackerrank.com/certificates/0c13dd002982",
     },
+
+
   ];
 
   return (

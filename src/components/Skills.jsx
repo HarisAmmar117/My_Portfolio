@@ -27,6 +27,8 @@ import keycloakImg from "../images/skills/keycloak.svg";
 import grafanaImg from "../images/skills/Grafana.png";
 import zipkinImg from "../images/skills/zipkin.png";
 import mysqlImg from "../images/skills/MySQL.png";
+import numpyImg from "../images/skills/NumPy.png";
+import scikitImg from "../images/skills/scikit-learn.png";
 
 const Skills = () => {
   const technicalSkills = {
@@ -68,6 +70,15 @@ const Skills = () => {
         { name: "MySQL", image: mysqlImg },
       ],
     },
+    "AI & Data Science Tools": {
+        description: "Machine learning and data analysis libraries",
+        skills: [
+          { name: "NumPy", image: numpyImg },
+          { name: "scikit-learn", image: scikitImg },
+          // { name: "MATLAB", image: matlabImg }, // only if you used it
+        ],
+      },
+
     "DevOps, Security & Monitoring": {
       description: "Deployment, containerization, authentication & monitoring",
       skills: [
