@@ -1,6 +1,7 @@
 import React from "react";
 import apiBlogImage from "../images/blogs/apiBlog.jpg";
 import dockerBlogImage from "../images/blogs/contImage.jpg"
+import smlBlogImage from "../images/blogs/sml.jpeg"
 
 const Blogs = () => {
   const blogs = [
@@ -19,6 +20,12 @@ const Blogs = () => {
       image: dockerBlogImage,
       link: "https://ammar117blogs.hashnode.dev/containerization-explained-a-practical-guide-using-docker",
     },
+    {
+      title: "Understanding Supervised Machine Learning: A Step-by-Step Guide",
+      description: "A beginner-friendly guide to supervised machine learning covering regression, classification, feature engineering, gradient descent, and more with practical examples.",
+      image: smlBlogImage,
+      link: "https://ammar117blogs.hashnode.dev/understanding-supervised-learning-a-step-by-step-guide"
+    }
   ];
 
   return (

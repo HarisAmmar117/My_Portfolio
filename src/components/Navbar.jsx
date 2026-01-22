@@ -10,8 +10,8 @@ const Header = () => {
     { name: 'Resume', href: '#resume' },
     { name: 'Certificates', href: '#certificates' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Blogs', href: '#blogs' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Blogs', href: '#blogs' },
     { name: 'Contact', href: '#contact' },
   ];
 
