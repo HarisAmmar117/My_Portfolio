@@ -5,6 +5,13 @@ const Projects = () => {
   const projects = [
 
     {
+      "title": "Student Performance Predictor",
+      "tech": ["Python", "FastAPI", "NumPy", "React", "Vite"],
+      "description": "Built a basic Linear Regression and Logistic Classification project to showcase my understanding of supervised machine learning. The app uses FastAPI backend for predictions and a React frontend for real-time input and result display.",
+      "github": "https://github.com/YOUR_USERNAME/student-performance-ml",
+      "image": "/api/placeholder/400/250"
+    },
+    {
       title: "eCommerce Microservices WebApp",
       tech: ["Spring Boot", "Spring Cloud", "Docker"],
       description:
