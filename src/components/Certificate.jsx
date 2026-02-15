@@ -2,6 +2,15 @@ import React from "react";
 
 const Certificates = () => {
   const certificates = [
+
+    {
+      title: "Advanced Learning Algorithms",
+      issuer: "deeplearning.AI, Coursera",
+      year: "2026",
+      description: "Completed a course on building and training neural networks with TensorFlow for multi-class classification, applying best practices in machine learning, and implementing decision trees and ensemble methods including random forests and boosted trees.",
+      url: "https://www.coursera.org/account/accomplishments/verify/DUJMSHYJFC7M?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
+    },
+
     {
       title: "Java Spring Boot Microservices eCommerce Project Masterclass",
       issuer: "EmbarkX, Udemy",
